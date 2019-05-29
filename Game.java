@@ -34,23 +34,39 @@ public class Game
      */
     private void createRooms()
     {
-        Room outside, theater, pub, lab, office;
+        Room spawnCT, z,middle, garage, car, tree, bombA, dor, larga, main, bombB, toxic, spawnT;
       
         // create the rooms
-        outside = new Room("outside the main entrance of the university");
-        theater = new Room("in a lecture theater");
-        pub = new Room("in the campus pub");
-        lab = new Room("in a computing lab");
-        office = new Room("in the computing admin office");
+        spawnCT = new Room("in spawn antiterrorist");
+        z = new Room("in Z");
+        middle = new Room("in the middle of the map");
+        garage = new Room("in the garage");
+        car = new Room("behind the coche");
+        bombA = new Room("on the A site");
+        dor = new Room("behind the door");
+        larga = new Room("entrando por larga");
+        main = new Room("in main");
+        tree = new Room("covering the tree");
+        bombB = new Room("on the B site");
+        toxic = new Room("in toxico");
+        spawnT = new Room("on the CT spwn");
         
-        // initialise room exits
-        outside.setExits(null, theater, lab, pub);
-        theater.setExits(null, null, null, outside);
-        pub.setExits(null, outside, null, null);
-        lab.setExits(outside, office, null, null);
-        office.setExits(null, null, null, lab);
+        // initialise room exits n ,e ,s ,o
+        spawnT.setExits(garage, null, null, null);
+        garage.setExits(middle, main, spawnT, toxic);
+        main.setExits(bombA, larga, null, garage);
+        larga.setExits(dor, null, null, main);
+        toxic.setExits(bombB, garage, null, null);        
+        dor.setExits(null, null, larga, bombA);
+        bombA.setExits(car, dor, main, null);
+        middle.setExits(z, null, garage, null);
+        bombB.setExits(tree, null, toxic, null);        
+        car.setExits(null, null, bombA, z);
+        z.setExits(spawnCT, car, middle, tree);
+        tree.setExits(null, z, bombB, null);
+        spawnCT.setExits(null, null, z, null);
 
-        currentRoom = outside;  // start game outside
+        currentRoom = spawnT;  // start game outside
     }
 
     /**
