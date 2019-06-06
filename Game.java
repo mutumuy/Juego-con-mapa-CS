@@ -41,30 +41,30 @@ public class Game
         z = new Room("in Z");
         middle = new Room("in the middle of the map");
         garage = new Room("in the garage");
-        car = new Room("behind the coche");
+        car = new Room("behind the car");
         bombA = new Room("on the A site");
         dor = new Room("behind the door");
-        larga = new Room("entrando por larga");
+        larga = new Room("entrando por long");
         main = new Room("in main");
         tree = new Room("covering the tree");
         bombB = new Room("on the B site");
-        toxic = new Room("in toxico");
+        toxic = new Room("in toxic");
         spawnT = new Room("on the CT spwn");
         
-        // initialise room exits n ,e ,s ,o
-        spawnT.setExits(garage, null, null, null);
-        garage.setExits(middle, main, spawnT, toxic);
-        main.setExits(bombA, larga, null, garage);
-        larga.setExits(dor, null, null, main);
-        toxic.setExits(bombB, garage, null, null);        
-        dor.setExits(null, null, larga, bombA);
-        bombA.setExits(car, dor, main, null);
-        middle.setExits(z, null, garage, null);
-        bombB.setExits(tree, null, toxic, null);        
-        car.setExits(null, null, bombA, z);
-        z.setExits(spawnCT, car, middle, tree);
-        tree.setExits(null, z, bombB, null);
-        spawnCT.setExits(null, null, z, null);
+        // initialise room exits n ,e ,s ,o, se
+        spawnT.setExits(garage, null, null, null, null);
+        garage.setExits(middle, main, spawnT, toxic, null);
+        main.setExits(bombA, larga, null, garage, null);
+        larga.setExits(dor, null, null, main, null);
+        toxic.setExits(bombB, garage, null, null, null);        
+        dor.setExits(null, null, larga, bombA, null);
+        bombA.setExits(car, dor, main, null, null);
+        middle.setExits(z, null, garage, null, null);
+        bombB.setExits(tree, null, toxic, null, garage);        
+        car.setExits(null, null, bombA, z, null);
+        z.setExits(spawnCT, car, middle, tree, null);
+        tree.setExits(null, z, bombB, null, null);
+        spawnCT.setExits(null, null, z, null, null);
 
         currentRoom = spawnT;  // start game outside
     }
@@ -173,6 +173,9 @@ public class Game
         if(direction.equals("west")) {
             nextRoom = currentRoom.westExit;
         }
+        if(direction.equals("southEast")) {
+            nextRoom = currentRoom.southEastExit;
+        }
 
         if (nextRoom == null) {
             System.out.println("There is no door!");
@@ -214,6 +217,9 @@ public class Game
             }
             if(currentRoom.westExit != null) {
                 System.out.print("west ");
+            }
+            if(currentRoom.southEastExit != null) {
+                System.out.print("southEast ");
             }
     }
 }
