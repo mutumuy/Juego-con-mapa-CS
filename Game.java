@@ -52,20 +52,50 @@ public class Game
         spawnT = new Room("on the CT spwn");
         
         // initialise room exits n ,e ,s ,o, se, no
-        spawnT.setExits(garage, null, null, null, null, null);
-        garage.setExits(middle, main, spawnT, toxic, null, bombB);
-        main.setExits(bombA, larga, null, garage, null, null);
-        larga.setExits(dor, null, null, main, null, null);
-        toxic.setExits(bombB, garage, null, null, null, null);        
-        dor.setExits(null, null, larga, bombA, null, null);
-        bombA.setExits(car, dor, main, null, null, null);
-        middle.setExits(z, null, garage, null, null, null);
-        bombB.setExits(tree, null, toxic, null, garage, null);        
-        car.setExits(null, null, bombA, z, null, null);
-        z.setExits(spawnCT, car, middle, tree, null, null);
-        tree.setExits(null, z, bombB, null, null, null);
-        spawnCT.setExits(null, null, z, null, null, null);
-
+        spawnT.setExit("north", middle);
+        
+        garage.setExit("east", main);
+        garage.setExit("south", spawnT);
+        garage.setExit("west", toxic);
+        garage.setExit("northWest", bombB);
+        
+        main.setExit("north", bombA);
+        main.setExit("east", larga);
+        main.setExit("west", garage);
+        
+        larga.setExit("north", dor);
+        larga.setExit("west", main);
+        
+        toxic.setExit("north", bombB); 
+        toxic.setExit("south", garage);
+        
+        dor.setExit("south", larga);
+        dor.setExit("west", bombA);
+        
+        bombA.setExit("north", car);
+        bombA.setExit("east", dor);
+        bombA.setExit("south", main); 
+        
+        middle.setExit("north", z);
+        middle.setExit("south", garage);
+        
+        bombB.setExit("north", tree); 
+        bombB.setExit("south", toxic);
+        bombB.setExit("southEast", garage);
+        
+        car.setExit("south", bombA);
+        car.setExit("west", z);
+        
+        z.setExit("north", spawnCT);
+        z.setExit("east", car);
+        z.setExit("south", middle);
+        z.setExit("west", tree);
+        
+        tree.setExit("east", z);
+        tree.setExit("south", bombB);
+        
+        spawnCT.setExit("south", z);
+        
         currentRoom = spawnT;  // start game outside
     }
 
