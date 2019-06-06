@@ -51,20 +51,20 @@ public class Game
         toxic = new Room("in toxic");
         spawnT = new Room("on the CT spwn");
         
-        // initialise room exits n ,e ,s ,o, se
-        spawnT.setExits(garage, null, null, null, null);
-        garage.setExits(middle, main, spawnT, toxic, null);
-        main.setExits(bombA, larga, null, garage, null);
-        larga.setExits(dor, null, null, main, null);
-        toxic.setExits(bombB, garage, null, null, null);        
-        dor.setExits(null, null, larga, bombA, null);
-        bombA.setExits(car, dor, main, null, null);
-        middle.setExits(z, null, garage, null, null);
-        bombB.setExits(tree, null, toxic, null, garage);        
-        car.setExits(null, null, bombA, z, null);
-        z.setExits(spawnCT, car, middle, tree, null);
-        tree.setExits(null, z, bombB, null, null);
-        spawnCT.setExits(null, null, z, null, null);
+        // initialise room exits n ,e ,s ,o, se, no
+        spawnT.setExits(garage, null, null, null, null, null);
+        garage.setExits(middle, main, spawnT, toxic, null, bombB);
+        main.setExits(bombA, larga, null, garage, null, null);
+        larga.setExits(dor, null, null, main, null, null);
+        toxic.setExits(bombB, garage, null, null, null, null);        
+        dor.setExits(null, null, larga, bombA, null, null);
+        bombA.setExits(car, dor, main, null, null, null);
+        middle.setExits(z, null, garage, null, null, null);
+        bombB.setExits(tree, null, toxic, null, garage, null);        
+        car.setExits(null, null, bombA, z, null, null);
+        z.setExits(spawnCT, car, middle, tree, null, null);
+        tree.setExits(null, z, bombB, null, null, null);
+        spawnCT.setExits(null, null, z, null, null, null);
 
         currentRoom = spawnT;  // start game outside
     }
