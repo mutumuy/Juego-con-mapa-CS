@@ -49,7 +49,7 @@ public class Game
         tree = new Room("covering the tree");
         bombB = new Room("on the B site");
         toxic = new Room("in toxic");
-        spawnT = new Room("on the CT spwn");
+        spawnT = new Room("on the CT spawn");
         
         // initialise room exits n ,e ,s ,o, se, no
         spawnT.setExit("north", middle);
@@ -156,6 +156,9 @@ public class Game
         else if (commandWord.equals("look")) {	
             look();
         }
+        else if (commandWord.equals("eat")) {	
+            eat();
+        }
         else if (commandWord.equals("quit")) {	
             wantToQuit = quit(command);
         }
@@ -228,5 +231,9 @@ public class Game
     
     private void look() {   
         System.out.println(currentRoom.getLongDescription());
+    }
+    
+    private void eat() {   
+        System.out.println("You have eaten now and you are not hungry any more");
     }
 }
