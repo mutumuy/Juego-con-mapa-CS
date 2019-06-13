@@ -37,19 +37,19 @@ public class Game
         Room spawnCT, z,middle, garage, car, tree, bombA, dor, larga, main, bombB, toxic, spawnT;
       
         // create the rooms
-        spawnCT = new Room("in spawn antiterrorist");
-        z = new Room("in Z");
-        middle = new Room("in the middle of the map");
-        garage = new Room("in the garage");
-        car = new Room("behind the car");
-        bombA = new Room("on the A site");
-        dor = new Room("behind the door");
-        larga = new Room("entrando por long");
-        main = new Room("in main");
-        tree = new Room("covering the tree");
-        bombB = new Room("on the B site");
-        toxic = new Room("in toxic");
-        spawnT = new Room("on the CT spawn");
+        spawnCT = new Room("in spawn antiterrorist", "Un fusil AK-47 ", 4500 );
+        z = new Room("in Z", "Un subfusil PP-Bizon ", 2100 );
+        middle = new Room("in the middle of the map", "Un rifle AWP ", 6500 );
+        garage = new Room("in the garage", "Un fusil Galil ", 3600 );
+        car = new Room("behind the car", "Una escopeta NOVA ", 2800 );
+        bombA = new Room("on the A site","Una bomba C4 ", 1200);
+        dor = new Room("behind the door", "Una ametralladora NEGEV ", 7400 );
+        larga = new Room("entrando por long", "Un fusil FAMAS ", 4500 );
+        main = new Room("in main", "Una pistola Eagle ", 1500 );
+        tree = new Room("covering the tree", "Un rifle SSG ", 4200 );
+        bombB = new Room("on the B site","Una bomba C4 ", 1200);
+        toxic = new Room("in toxic", "Una escopeta recortada ", 3000 );
+        spawnT = new Room("on the CT spawn","Un fusil M4A4 ",4100);
         
         // initialise room exits n ,e ,s ,o, se, no
         spawnT.setExit("north", middle);
