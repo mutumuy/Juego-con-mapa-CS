@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Set;
+import java.util.ArrayList;
 /**
  * Class Room - a room in an adventure game.
  *
@@ -18,7 +19,7 @@ public class Room
 {
     private String description;    
     private HashMap<String, Room> exits;
-    private Item arma;
+    private ArrayList<Item> armas;
 
     /**
      * Create a room described "description". Initially, it has
@@ -26,11 +27,11 @@ public class Room
      * "an open court yard".
      * @param description The room's description.
      */
-    public Room(String description, String descripcion, int peso) 
+    public Room(String description) 
     {
         this.description = description;
         exits = new HashMap<>();
-        arma = new Item(descripcion, peso);
+        armas = new ArrayList<>();
     }
     
     public void setExit(String direction, Room nextRoom){
@@ -70,7 +71,19 @@ public class Room
     
      public String getDescripcionArma() {
         String cadenaADevolver = "";
-        cadenaADevolver += "En esta sala hay " + arma.getDescripcion() + "con un peso de " + arma.getPeso() + " gramos";
+                if(armas.isEmpty()) {
+            cadenaADevolver = "La sala no contiene ningun arma";
+        } else {
+            cadenaADevolver = "En la sala hay las siguintes armas: \n";
+            for(Item itemActual : armas) {
+                cadenaADevolver += itemActual.getDescripcion() + " con un peso de " + itemActual.getPeso() + " gramos" + "\n";
+            }
+        }                  
         return cadenaADevolver;
+    }
+    
+    public void addItem(String descripcion , int peso) {
+        Item objetoAAgregar = new Item (descripcion , peso);
+        armas.add(objetoAAgregar);
     }
 }

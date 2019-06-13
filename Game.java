@@ -1,3 +1,4 @@
+
 /**
  *  This class is the main class of the "World of Zuul" application. 
  *  "World of Zuul" is a very simple, text based adventure game.  Users 
@@ -37,54 +38,69 @@ public class Game
         Room spawnCT, z,middle, garage, car, tree, bombA, dor, larga, main, bombB, toxic, spawnT;
       
         // create the rooms
-        spawnCT = new Room("in spawn antiterrorist", "Un fusil AK-47 ", 4500 );
-        z = new Room("in Z", "Un subfusil PP-Bizon ", 2100 );
-        middle = new Room("in the middle of the map", "Un rifle AWP ", 6500 );
-        garage = new Room("in the garage", "Un fusil Galil ", 3600 );
-        car = new Room("behind the car", "Una escopeta NOVA ", 2800 );
-        bombA = new Room("on the A site","Una bomba C4 ", 1200);
-        dor = new Room("behind the door", "Una ametralladora NEGEV ", 7400 );
-        larga = new Room("entrando por long", "Un fusil FAMAS ", 4500 );
-        main = new Room("in main", "Una pistola Eagle ", 1500 );
-        tree = new Room("covering the tree", "Un rifle SSG ", 4200 );
-        bombB = new Room("on the B site","Una bomba C4 ", 1200);
-        toxic = new Room("in toxic", "Una escopeta recortada ", 3000 );
-        spawnT = new Room("on the CT spawn","Un fusil M4A4 ",4100);
+        spawnCT = new Room("in spawn antiterrorist");
+        z = new Room("in Z");
+        middle = new Room("in the middle of the map");
+        garage = new Room("in the garage");
+        car = new Room("behind the car");
+        bombA = new Room("on the A site");
+        dor = new Room("behind the door");
+        larga = new Room("entrando por long");
+        main = new Room("in main");
+        tree = new Room("covering the tree");
+        bombB = new Room("on the B site");
+        toxic = new Room("in toxic");
+        spawnT = new Room("on the CT spawn");
+        
         
         // initialise room exits n ,e ,s ,o, se, no
-        spawnT.setExit("north", middle);
+        spawnT.setExit("north", garage);
+        spawnT.addItem("Un fusil AK-47 ", 4500);
         
+        garage.setExit("north", middle);
         garage.setExit("east", main);
         garage.setExit("south", spawnT);
         garage.setExit("west", toxic);
         garage.setExit("northWest", bombB);
+        garage.addItem( "Un fusil Galil ", 3600 );
+        garage.addItem( "Una pistola Tec-9 ", 4500 );
         
         main.setExit("north", bombA);
         main.setExit("east", larga);
         main.setExit("west", garage);
+        main.addItem("Una pistola Eagle ", 1500 );
         
         larga.setExit("north", dor);
         larga.setExit("west", main);
+        larga.addItem("Un fusil FAMAS ", 4500 );
+        larga.addItem("Una pistola Eagle ", 1500 );       
         
         toxic.setExit("north", bombB); 
         toxic.setExit("south", garage);
+        toxic.addItem("Una escopeta recortada ", 3000 );
         
         dor.setExit("south", larga);
         dor.setExit("west", bombA);
         
         bombA.setExit("north", car);
         bombA.setExit("east", dor);
-        bombA.setExit("south", main); 
+        bombA.setExit("south", main);
+        bombA.addItem("Una bomba C4 ", 1200);
         
         middle.setExit("north", z);
         middle.setExit("south", garage);
+        middle.addItem("Un rifle AWP ", 6500 );
+        middle.addItem("Un fusil AK-47 ", 4500);
+        middle.addItem("Un fusil M4A4 ",4100);
         
         bombB.setExit("north", tree); 
         bombB.setExit("south", toxic);
         bombB.setExit("southEast", garage);
+        bombB.addItem("Una bomba C4 ", 1200);
         
         car.setExit("south", bombA);
         car.setExit("west", z);
+        car.addItem("Una escopeta NOVA ", 2800);
         
         z.setExit("north", spawnCT);
         z.setExit("east", car);
@@ -95,6 +111,7 @@ public class Game
         tree.setExit("south", bombB);
         
         spawnCT.setExit("south", z);
+        spawnCT.addItem("Un fusil M4A4 ",4100);
         
         currentRoom = spawnT;  // start game outside
     }
@@ -147,19 +164,19 @@ public class Game
 
         String commandWord = command.getCommandWord();
         
-        if (commandWord.equals("help")) {	
+        if (commandWord.equals("help")) {   
             printHelp();
         }
-        else if (commandWord.equals("go")) {	
+        else if (commandWord.equals("go")) {    
             goRoom(command);
         }
-        else if (commandWord.equals("look")) {	
+        else if (commandWord.equals("look")) {  
             look();
         }
-        else if (commandWord.equals("eat")) {	
+        else if (commandWord.equals("eat")) {   
             eat();
         }
-        else if (commandWord.equals("quit")) {	
+        else if (commandWord.equals("quit")) {  
             wantToQuit = quit(command);
         }
         return wantToQuit;
