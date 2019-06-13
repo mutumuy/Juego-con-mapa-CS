@@ -76,7 +76,7 @@ public class Game
         larga.setExit("north", dor);
         larga.setExit("west", main);
         larga.addItem("Un fusil FAMAS ", 4500, "Famas", true );
-        larga.addItem("Una pistola Eagle ", 1500 , "Eagle", true );       
+        larga.addItem("Una pistola Eagle ", 1500 , "Eagle", false );       
         
         toxic.setExit("north", bombB); 
         toxic.setExit("south", garage);

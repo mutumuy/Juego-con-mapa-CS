@@ -1,0 +1,223 @@
+[33mcommit 350256f03498f630f56b7c6c562d85281fa0b64f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;32mrefac[m[33m)[m
+Reflog: HEAD@{0} (Oscar Garcia Abad <mutumuy@gmail.com>)
+Reflog message: checkout: moving from 350256f03498f630f56b7c6c562d85281fa0b64f to master
+Author: Oscar Garcia Abad <mutumuy@gmail.com>
+Date:   Thu Jun 13 13:38:37 2019 +0200
+
+    Commit17 Añdido objeto de la clase Stack
+
+[33mcommit 350256f03498f630f56b7c6c562d85281fa0b64f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;32mrefac[m[33m)[m
+Reflog: HEAD@{1} (Oscar Garcia Abad <mutumuy@gmail.com>)
+Reflog message: checkout: moving from master to head
+Author: Oscar Garcia Abad <mutumuy@gmail.com>
+Date:   Thu Jun 13 13:38:37 2019 +0200
+
+    Commit17 Añdido objeto de la clase Stack
+
+[33mcommit 350256f03498f630f56b7c6c562d85281fa0b64f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;32mrefac[m[33m)[m
+Reflog: HEAD@{2} (Oscar Garcia Abad <mutumuy@gmail.com>)
+Reflog message: checkout: moving from refac to master
+Author: Oscar Garcia Abad <mutumuy@gmail.com>
+Date:   Thu Jun 13 13:38:37 2019 +0200
+
+    Commit17 Añdido objeto de la clase Stack
+
+[33mcommit 350256f03498f630f56b7c6c562d85281fa0b64f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;32mrefac[m[33m)[m
+Reflog: HEAD@{3} (Oscar Garcia Abad <mutumuy@gmail.com>)
+Reflog message: checkout: moving from master to refac
+Author: Oscar Garcia Abad <mutumuy@gmail.com>
+Date:   Thu Jun 13 13:38:37 2019 +0200
+
+    Commit17 Añdido objeto de la clase Stack
+
+[33mcommit 350256f03498f630f56b7c6c562d85281fa0b64f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;32mrefac[m[33m)[m
+Reflog: HEAD@{4} (Oscar Garcia Abad <mutumuy@gmail.com>)
+Reflog message: checkout: moving from refac to master
+Author: Oscar Garcia Abad <mutumuy@gmail.com>
+Date:   Thu Jun 13 13:38:37 2019 +0200
+
+    Commit17 Añdido objeto de la clase Stack
+
+[33mcommit 350256f03498f630f56b7c6c562d85281fa0b64f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;32mrefac[m[33m)[m
+Reflog: HEAD@{5} (Oscar Garcia Abad <mutumuy@gmail.com>)
+Reflog message: checkout: moving from master to refac
+Author: Oscar Garcia Abad <mutumuy@gmail.com>
+Date:   Thu Jun 13 13:38:37 2019 +0200
+
+    Commit17 Añdido objeto de la clase Stack
+
+[33mcommit 350256f03498f630f56b7c6c562d85281fa0b64f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;32mrefac[m[33m)[m
+Reflog: HEAD@{6} (Oscar Garcia Abad <mutumuy@gmail.com>)
+Reflog message: checkout: moving from cogersoltar to master
+Author: Oscar Garcia Abad <mutumuy@gmail.com>
+Date:   Thu Jun 13 13:38:37 2019 +0200
+
+    Commit17 Añdido objeto de la clase Stack
+
+[33mcommit 717534c0b47af5631ea2f1a3adc634825ab1553c[m[33m ([m[1;32mcogersoltar[m[33m)[m
+Reflog: HEAD@{7} (Oscar Garcia Abad <mutumuy@gmail.com>)
+Reflog message: commit: Commit r01 Añadido el cojer y soltar
+Author: Oscar Garcia Abad <mutumuy@gmail.com>
+Date:   Thu Jun 13 16:04:24 2019 +0200
+
+    Commit r01 Añadido el cojer y soltar
+
+[33mcommit 350256f03498f630f56b7c6c562d85281fa0b64f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;32mrefac[m[33m)[m
+Reflog: HEAD@{8} (Oscar Garcia Abad <mutumuy@gmail.com>)
+Reflog message: checkout: moving from master to cogersoltar
+Author: Oscar Garcia Abad <mutumuy@gmail.com>
+Date:   Thu Jun 13 13:38:37 2019 +0200
+
+    Commit17 Añdido objeto de la clase Stack
+
+[33mcommit 350256f03498f630f56b7c6c562d85281fa0b64f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;32mrefac[m[33m)[m
+Reflog: HEAD@{9} (Oscar Garcia Abad <mutumuy@gmail.com>)
+Reflog message: commit: Commit17 Añdido objeto de la clase Stack
+Author: Oscar Garcia Abad <mutumuy@gmail.com>
+Date:   Thu Jun 13 13:38:37 2019 +0200
+
+    Commit17 Añdido objeto de la clase Stack
+
+[33mcommit a095a844651f11eb053ac692676190b552c60427[m
+Reflog: HEAD@{10} (Oscar Garcia Abad <mutumuy@gmail.com>)
+Reflog message: commit: Commit16 Añadido comando back
+Author: Oscar Garcia Abad <mutumuy@gmail.com>
+Date:   Thu Jun 13 13:32:47 2019 +0200
+
+    Commit16 Añadido comando back
+
+[33mcommit 4812491446f4d6b92d26778988a276b012e2479a[m
+Reflog: HEAD@{11} (Oscar Garcia Abad <mutumuy@gmail.com>)
+Reflog message: commit: commit15 Corregido un error y añadida funcionalidad de varios ojetos por sala
+Author: Oscar Garcia Abad <mutumuy@gmail.com>
+Date:   Thu Jun 13 13:19:20 2019 +0200
+
+    commit15 Corregido un error y añadida funcionalidad de varios ojetos por sala
+
+[33mcommit 6def061d6bc3f7c1348754d86fac779b4150d87f[m
+Reflog: HEAD@{12} (Oscar Garcia Abad <mutumuy@gmail.com>)
+Reflog message: commit: Commit14 Hay un objeto en cada habitacion
+Author: Oscar Garcia Abad <mutumuy@gmail.com>
+Date:   Thu Jun 13 12:54:19 2019 +0200
+
+    Commit14 Hay un objeto en cada habitacion
+
+[33mcommit 94e565e162c983f98721892ce36a78c3ea31c21b[m
+Reflog: HEAD@{13} (Oscar Garcia Abad <mutumuy@gmail.com>)
+Reflog message: commit: Commit13 Prevision de futuro
+Author: Oscar Garcia Abad <mutumuy@gmail.com>
+Date:   Wed Jun 12 22:09:28 2019 +0200
+
+    Commit13 Prevision de futuro
+
+[33mcommit a5538ef0c5d25782403a0126cf328251f8b9f6c4[m
+Reflog: HEAD@{14} (Oscar Garcia Abad <mutumuy@gmail.com>)
+Reflog message: commit: Commit12 Corregido bug comando help
+Author: Oscar Garcia Abad <mutumuy@gmail.com>
+Date:   Wed Jun 12 22:01:44 2019 +0200
+
+    Commit12 Corregido bug comando help
+
+[33mcommit f35b75774a63fa38c106171d25d7a90452359a4b[m
+Reflog: HEAD@{15} (Oscar Garcia Abad <mutumuy@gmail.com>)
+Reflog message: commit: Commit11 Añadido el comando eat
+Author: Oscar Garcia Abad <mutumuy@gmail.com>
+Date:   Wed Jun 12 21:52:22 2019 +0200
+
+    Commit11 Añadido el comando eat
+
+[33mcommit f5ef14d95e82efad847651ef17b2ca424014c602[m
+Reflog: HEAD@{16} (Oscar Garcia Abad <mutumuy@gmail.com>)
+Reflog message: commit: Commit10 Añadido el comando look
+Author: Oscar Garcia Abad <mutumuy@gmail.com>
+Date:   Wed Jun 12 21:48:40 2019 +0200
+
+    Commit10 Añadido el comando look
+
+[33mcommit 5acd99866b1f7084581bcf98c725e2d19cfd2ff3[m
+Reflog: HEAD@{17} (Oscar Garcia Abad <mutumuy@gmail.com>)
+Reflog message: commit: 09.Creado el metodo getLongDescription en la clase Room para aplicar reponsability-driven design
+Author: Oscar Garcia Abad <mutumuy@gmail.com>
+Date:   Thu Jun 6 20:29:38 2019 +0200
+
+    09.Creado el metodo getLongDescription en la clase Room para aplicar reponsability-driven design
+
+[33mcommit 554d7f36bf86c0ca1804afe045f48f0fa9c526e5[m
+Reflog: HEAD@{18} (Oscar Garcia Abad <mutumuy@gmail.com>)
+Reflog message: commit: 08.Desacople completado
+Author: Oscar Garcia Abad <mutumuy@gmail.com>
+Date:   Thu Jun 6 20:10:04 2019 +0200
+
+    08.Desacople completado
+
+[33mcommit 7b30f252e0b0726276830916f73b5edd012c4f0e[m
+Reflog: HEAD@{19} (Oscar Garcia Abad <mutumuy@gmail.com>)
+Reflog message: commit: 07.Implementado HashMap en la clase Room
+Author: Oscar Garcia Abad <mutumuy@gmail.com>
+Date:   Thu Jun 6 19:45:48 2019 +0200
+
+    07.Implementado HashMap en la clase Room
+
+[33mcommit 37aed76101a233c0f1fa042f7c260e7311d000e0[m
+Reflog: HEAD@{20} (Oscar Garcia Abad <mutumuy@gmail.com>)
+Reflog message: commit: 06.Añadida ruta noroeste
+Author: Oscar Garcia Abad <mutumuy@gmail.com>
+Date:   Thu Jun 6 19:24:39 2019 +0200
+
+    06.Añadida ruta noroeste
+
+[33mcommit d8ca9a6f4c75f9350394aa8c7a6a13265547fd7e[m
+Reflog: HEAD@{21} (Oscar Garcia Abad <mutumuy@gmail.com>)
+Reflog message: commit: 05. Refactorizada la clase Room
+Author: Oscar Garcia Abad <mutumuy@gmail.com>
+Date:   Thu Jun 6 19:15:49 2019 +0200
+
+    05. Refactorizada la clase Room
+
+[33mcommit 11ffb6156dc2318d638045ddf31b47d61649febd[m
+Reflog: HEAD@{22} (Oscar Garcia Abad <mutumuy@gmail.com>)
+Reflog message: commit: Commit04 Añadida direccion sureste
+Author: Oscar Garcia Abad <mutumuy@gmail.com>
+Date:   Thu Jun 6 18:59:49 2019 +0200
+
+    Commit04 Añadida direccion sureste
+
+[33mcommit d8154f71b9b9350a262cab9701df0c07b6464e2c[m
+Reflog: HEAD@{23} (Oscar Garcia Abad <mutumuy@gmail.com>)
+Reflog message: commit: Commit03 implementado metodo printLocationInfo
+Author: Oscar Garcia Abad <mutumuy@gmail.com>
+Date:   Thu Jun 6 18:44:59 2019 +0200
+
+    Commit03 implementado metodo printLocationInfo
+
+[33mcommit 0cd74f172c85558f7a68dc899f27f63653841730[m[33m ([m[1;31mjuego/master[m[33m)[m
+Reflog: HEAD@{24} (Oscar Garcia abad <mutumuy@gmail.com>)
+Reflog message: commit: 02 recreadas localizaciones de mi juego
+Author: Oscar Garcia abad <mutumuy@gmail.com>
+Date:   Wed May 29 11:07:09 2019 +0200
+
+    02 recreadas localizaciones de mi juego
+
+[33mcommit f96aa5f7420ced1d678e07c2019a3865fb65955b[m
+Reflog: HEAD@{25} (Oscar Garcia abad <mutumuy@gmail.com>)
+Reflog message: commit: 01 Creado mapa propio
+Author: Oscar Garcia abad <mutumuy@gmail.com>
+Date:   Fri May 24 12:17:46 2019 +0200
+
+    01 Creado mapa propio
+
+[33mcommit 1491946f11e64909ab7dc62b19e2abe83592c899[m
+Reflog: HEAD@{26} (Oscar Garcia abad <mutumuy@gmail.com>)
+Reflog message: commit: Commit01 Añadido primer mapa
+Author: Oscar Garcia abad <mutumuy@gmail.com>
+Date:   Fri May 24 11:12:25 2019 +0200
+
+    Commit01 Añadido primer mapa
+
+[33mcommit 786eb7a618c6fd2abdfe5370e6e2a9d220bb4bd0[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Reflog: HEAD@{27} (Oscar Garcia abad <mutumuy@gmail.com>)
+Reflog message: clone: from https://github.com/miguelbayon/zuul-bad.git
+Author: Miguel Bayon (Toshiba) <miguel.bayon@iessanandres.com>
+Date:   Mon Apr 21 08:53:55 2014 +0200
+
+    Primer commit
