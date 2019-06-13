@@ -7,7 +7,7 @@ public class Player
     private Stack<Room> roomStack;
     private ArrayList<Item> bag;
     private int bagWeigth;
-    private static final int MAXWEIGTH = 10000;
+    private static int MAXWEIGTH = 10000;
     /**
      * Constructor for objects of class Player
      */
@@ -139,4 +139,14 @@ public class Player
             System.out.println("Tu mochila esta vacia");
         }
     }
+    
+    public void aumentarPeso(){
+        MAXWEIGTH = 15000;
+    }
+        
+    public void equipBackpack(){
+        System.out.print("Ahora puedes llevar mas peso en tu inventario");
+        aumentarPeso();
+    }
+    
 } 

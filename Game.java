@@ -89,6 +89,7 @@ public class Game
         bombA.setExit("east", dor);
         bombA.setExit("south", main);
         bombA.addItem("Una bomba C4 ", 1200, "C4", true);
+        bombA.addItem("Una mochila enorme", 0, "Mochila", true);
         
         middle.setExit("north", z);
         middle.setExit("south", garage);
@@ -100,6 +101,7 @@ public class Game
         bombB.setExit("south", toxic);
         bombB.setExit("southEast", garage);
         bombB.addItem("Una bomba C4 ", 1200, "C4", true);
+        bombB.addItem("Una mochila enorme", 0, "Mochila", true);
         
         car.setExit("south", bombA);
         car.setExit("west", z);
@@ -194,6 +196,9 @@ public class Game
         }
         else if (commandWord.equals("items")) {
             player.items();
+        }
+        else if (commandWord.equals("equipBackpack")){
+            player.equipBackpack();
         }
         return wantToQuit;
     }
