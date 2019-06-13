@@ -82,8 +82,26 @@ public class Room
         return cadenaADevolver;
     }
     
-    public void addItem(String descripcion , int peso) {
-        Item objetoAAgregar = new Item (descripcion , peso);
+    public void addItem(String descripcion, int peso, String id, boolean canBePickedUp) {
+        Item objetoAAgregar = new Item (descripcion , peso, id, canBePickedUp);
         armas.add(objetoAAgregar);
+    }
+    
+    public Item getItem(String id){
+        boolean buscando = true;
+        int position = 0;
+        Item itemToReturn = null;
+        while (buscando && armas.size() > position){
+            if (armas.get(position).getId().equals(id)){
+                itemToReturn = armas.get(position);
+                buscando = false;
+            }
+            position++;
+        }
+        return itemToReturn;
+    }
+
+    public void removeItem(Item item){
+        armas.remove(item);
     }
 }

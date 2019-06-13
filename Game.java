@@ -20,8 +20,7 @@ import java.util.Stack;
 public class Game 
 {
     private Parser parser;
-    private Room currentRoom;
-    private Stack habitacionesRecorridas;
+    private Player player;
         
     /**
      * Create the game and initialise its internal map.
@@ -30,14 +29,14 @@ public class Game
     {
         createRooms();
         parser = new Parser();
-        habitacionesRecorridas = new Stack();
-
+        player = new Player();
+        player.setCurrentRoom(createRooms());
     }
 
     /**
      * Create all the rooms and link their exits together.
      */
-    private void createRooms()
+    private Room createRooms()
     {
         Room spawnCT, z,middle, garage, car, tree, bombA, dor, larga, main, bombB, toxic, spawnT;
       
@@ -54,34 +53,34 @@ public class Game
         tree = new Room("covering the tree");
         bombB = new Room("on the B site");
         toxic = new Room("in toxic");
-        spawnT = new Room("on the CT spawn");
+        spawnT = new Room("on the T spawn");
         
         
         // initialise room exits n ,e ,s ,o, se, no
         spawnT.setExit("north", garage);
-        spawnT.addItem("Un fusil AK-47 ", 4500);
+        spawnT.addItem("Un fusil AK-47 ", 4500, "AK-47", true);
         
         garage.setExit("north", middle);
         garage.setExit("east", main);
         garage.setExit("south", spawnT);
         garage.setExit("west", toxic);
         garage.setExit("northWest", bombB);
-        garage.addItem( "Un fusil Galil ", 3600 );
-        garage.addItem( "Una pistola Tec-9 ", 4500 );
+        garage.addItem( "Un fusil Galil ", 3600, "Galil", true);
+        garage.addItem( "Una pistola Tec-9 ", 4500, "Tec-9", false);
         
         main.setExit("north", bombA);
         main.setExit("east", larga);
         main.setExit("west", garage);
-        main.addItem("Una pistola Eagle ", 1500 );
+        main.addItem("Una pistola Eagle ", 1500, "Eagle", false);
         
         larga.setExit("north", dor);
         larga.setExit("west", main);
-        larga.addItem("Un fusil FAMAS ", 4500 );
-        larga.addItem("Una pistola Eagle ", 1500 );       
+        larga.addItem("Un fusil FAMAS ", 4500, "Famas", true );
+        larga.addItem("Una pistola Eagle ", 1500 , "Eagle", true );       
         
         toxic.setExit("north", bombB); 
         toxic.setExit("south", garage);
-        toxic.addItem("Una escopeta recortada ", 3000 );
+        toxic.addItem("Una escopeta Recortada ", 3000, "Recortada", true);
         
         dor.setExit("south", larga);
         dor.setExit("west", bombA);
@@ -89,22 +88,22 @@ public class Game
         bombA.setExit("north", car);
         bombA.setExit("east", dor);
         bombA.setExit("south", main);
-        bombA.addItem("Una bomba C4 ", 1200);
+        bombA.addItem("Una bomba C4 ", 1200, "C4", true);
         
         middle.setExit("north", z);
         middle.setExit("south", garage);
-        middle.addItem("Un rifle AWP ", 6500 );
-        middle.addItem("Un fusil AK-47 ", 4500);
-        middle.addItem("Un fusil M4A4 ",4100);
+        middle.addItem("Un rifle AWP ", 6500, "AWP", true);
+        middle.addItem("Un fusil AK-47 ", 4500, "AK-47", true);
+        middle.addItem("Un fusil M4A4 ",4100, "M4A4", false);
         
         bombB.setExit("north", tree); 
         bombB.setExit("south", toxic);
         bombB.setExit("southEast", garage);
-        bombB.addItem("Una bomba C4 ", 1200);
+        bombB.addItem("Una bomba C4 ", 1200, "C4", true);
         
         car.setExit("south", bombA);
         car.setExit("west", z);
-        car.addItem("Una escopeta NOVA ", 2800);
+        car.addItem("Una escopeta NOVA ", 2800, "Nova", false);
         
         z.setExit("north", spawnCT);
         z.setExit("east", car);
@@ -115,9 +114,10 @@ public class Game
         tree.setExit("south", bombB);
         
         spawnCT.setExit("south", z);
-        spawnCT.addItem("Un fusil M4A4 ",4100);
+        spawnCT.addItem("Un fusil M4A4 ",4100, "M4A4", false);
+                
         
-        currentRoom = spawnT;  // start game outside
+        return spawnT;  // start game outside
     }
 
     /**
@@ -149,7 +149,7 @@ public class Game
         System.out.println("Type 'help' if you need help.");
         System.out.println();
         System.out.println();
-        printLocationInfo();
+        player.look();
     }
 
     /**
@@ -172,19 +172,28 @@ public class Game
             printHelp();
         }
         else if (commandWord.equals("go")) {    
-            goRoom(command);
+            player.goRoom(command);
         }
         else if (commandWord.equals("look")) {  
-            look();
+            player.look();
         }
         else if (commandWord.equals("eat")) {   
-            eat();
+            player.eat();
         }
         else if (commandWord.equals("quit")) {  
             wantToQuit = quit(command);
         }
         else if (commandWord.equals("back")) {  
-            backRoom();
+            player.back();
+        }
+         else if (commandWord.equals("take")) {
+            player.take(command);
+        }
+        else if (commandWord.equals("drop")) {
+            player.drop(command);
+        }
+        else if (commandWord.equals("items")) {
+            player.items();
         }
         return wantToQuit;
     }
@@ -201,35 +210,7 @@ public class Game
         System.out.println(parser.showCommands());
         parser.showCommands();
     }
-
-    /** 
-     * Try to go in one direction. If there is an exit, enter
-     * the new room, otherwise print an error message.
-     */
-    private void goRoom(Command command) 
-    {
-        if(!command.hasSecondWord()) {
-            // if there is no second word, we don't know where to go...
-            System.out.println("Go where?");
-            return;
-        }
-
-        String direction = command.getSecondWord();
-
-        // Try to leave current room.
-        Room nextRoom = currentRoom.getExit(direction);
-
-        if (nextRoom == null) {
-            System.out.println("There is no door!");
-        }
-        else {
-            Room previousRoom = currentRoom;
-            habitacionesRecorridas.push(previousRoom);
-            currentRoom = nextRoom;            
-            System.out.println();
-            printLocationInfo();
-        }
-    }
+   
 
     /** 
      * "Quit" was entered. Check the rest of the command to see
@@ -245,27 +226,6 @@ public class Game
         else {
             return true;  // signal that we want to quit
         }
-    }
+    }    
     
-    private void printLocationInfo(){
-            System.out.println(currentRoom.getLongDescription());
-            System.out.println();
-    }
-    
-    private void look() {   
-        System.out.println(currentRoom.getLongDescription());
-    }
-    
-    private void eat() {   
-        System.out.println("You have eaten now and you are not hungry any more");
-    }
-    
-    private void backRoom() {
-        if(!habitacionesRecorridas.isEmpty()){
-            currentRoom = (Room) habitacionesRecorridas.pop();
-        }
-        else {
-            System.out.println("No puedes retroceder mas");
-        }
-    }
 }
