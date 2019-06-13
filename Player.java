@@ -82,7 +82,7 @@ public class Player
         String positionItem = command.getSecondWord();
         Item itemToTake = currentRoom.getItem(positionItem);
 
-        if (itemToTake != null && bagWeigth + itemToTake.getPeso() < MAXWEIGTH){
+        if (itemToTake != null ){
             System.out.println("Has cogido " + "\n");
             System.out.println(itemToTake.getDescripcion() + "con un peso de " + itemToTake.getPeso()+ " gramos");
             bagWeigth += itemToTake.getPeso();
@@ -90,13 +90,8 @@ public class Player
             currentRoom.removeItem(itemToTake);
         }
 
-        else{
-            if (itemToTake == null){
-                System.out.println("No hay armas en la habitacion");
-            }
-            else{
-                System.out.println("Te has pasado del peso de la mochila");
-            }
+        else{            
+            System.out.println("No hay armas en la habitacion");                       
         }
     }
 
